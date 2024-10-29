@@ -5,10 +5,9 @@ const ShadCNInfo = () => {
     <div className="flex flex-col items-center p-8 space-y-12 min-h-screen bg-gradient-to-r from-blue-100 to-teal-200">
       <header className="text-center">
         <h1 className="text-5xl md:text-7xl font-extrabold text-gray-800 animate-fade-in">ShadCN & Radix UI Presentation</h1>
-        <h2 className="text-lg md:text-xl text-gray-700 font-semibold mt-2 animate">
-  Presented by Aleeza GIAIC Student
-</h2>
-
+        <h2 className="text-lg md:text-xl text-gray-700 font-semibold mt-2">
+          Presented by Aleeza, GIAIC Student
+        </h2>
       </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-7xl">
         <InfoCard
@@ -49,7 +48,7 @@ const ShadCNInfo = () => {
           <h2 className="text-xl font-bold mb-3 text-gray-800">Add Button Component</h2>
           <p className="mb-3 text-gray-700">You can import it like this:</p>
           <pre className="bg-blue-50 p-4 rounded-lg shadow-md text-blue-800">
-            import &#123; Button &#125; from "@/components/ui/button"
+            import &#123; Button &#125; from &quot;@/components/ui/button&quot;
           </pre>
           <p className="mt-2 text-gray-700">Then use it like this:</p>
           <pre className="bg-blue-50 p-4 rounded-lg shadow-md text-blue-800">
@@ -136,7 +135,12 @@ const ShadCNInfo = () => {
   );
 };
 
-const InfoCard = ({ title, content }: any) => (
+interface InfoCardProps {
+  title: string;
+  content: React.ReactNode; 
+}
+
+const InfoCard = ({ title, content }: InfoCardProps) => (
   <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between transition-transform transform hover:scale-105 border border-gray-300 animate-slide-in">
     <h2 className="text-xl font-bold mb-3 text-gray-800">{title}</h2>
     <div className="text-gray-700 flex-grow">{content}</div>
